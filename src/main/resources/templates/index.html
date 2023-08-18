@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<style>
+    div{
+    width: 99%;
+    height: 600px;
+    background-color: gray;
+    font-size: 2em;
+    }
+    h1{
+    text-align: center;
+    font-size: 5em;
+    }
+    h2{
+    font-size: 3em;
+    }
+</style>
+<head>
+    <meta charset="UTF-8" http-equiv="Content-Type" content="text/html">
+    <title>Learn Korean</title>
+    <script>
+        function fetchRandomGrammar() {
+        fetch('/randgram')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("output").innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+    function escapeHtml(unsafe) {
+            return unsafe.replace(/&/g, "&amp;")
+                         .replace(/</g, "&lt;")
+                         .replace(/>/g, "&gt;")
+                         .replace(/"/g, "&quot;")
+                         .replace(/'/g, "&#039;");
+    }
+
+    document.addEventListener("DOMContentLoaded", fetchRandomGrammar);
+    </script>
+</head>
+<body>
+<h1>LEARN KOREAN</h1>
+<h2>today's grammar</h2>
+<div id="output"></div>
+<a href="camera.html" target="_blank">
+    <img src="../static/icon/camera.png"
+         style="position:fixed; bottom: 10px; width:18%; left:0.1%;"  alt="카메라 아이콘"/>
+</a>
+<a href="trans.html" target="_blank">
+    <img src="../static/icon/translating.png"
+         style="position:fixed; bottom: 10px; width:18%; left:21%;"  alt="번역 아이콘"/>
+</a>
+<a href="index.html" target="_blank">
+    <img src="../static/icon/home.png"
+         style="position:fixed; bottom: 10px; width:18%; left:41%;"  alt="홈 아이콘"/>
+</a>
+<a href="quiz.html" target="_blank">
+    <img src="../static/icon/quiz.png"
+         style="position:fixed; bottom: 10px; width:18%; left: 62%;" alt="퀴즈 아이콘"/>
+</a>
+<a href="dict.html" target="_blank">
+    <img src="../static/icon/dict2.png"
+         style="position:fixed; bottom: 10px; width:17%; left:82%;" alt="사전 아이콘"/>
+</a>
+</body>
+</html>
