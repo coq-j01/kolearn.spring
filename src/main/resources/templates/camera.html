@@ -1,45 +1,81 @@
 <!DOCTYPE html>
 <html lang="ko">
 <style>
-    div{
-    width: 99%;
-    height: 600px;
-    background-color: gray;
-    font-size: 2em;
-    }
     h1{
     text-align: center;
     font-size: 5em;
     }
-    h2{
-    font-size: 3em;
+    .img-text{
+    margin-top:5%;
+    font-size:4em;
     }
 </style>
 <head>
     <meta charset="UTF-8" http-equiv="Content-Type" content="text/html">
     <title>Learn Korean</title>
 </head>
-<body>
-<h1>CAMERA</h1>
+<body bgcolor='F2E8D5'>
+<h1>Image Translator</h1>
+<div style="text-align:center">
+    <img src="images/Belt.png" >
+</div>
+<br><br>
+<div style="margin-left:10%">
+    <img src="images/Circle.png" width="7%"style="vertical-align:bottom;">
+    <span class="img-text">  Take with camera</span>
+</div>
+<br>
+<div style="text-align:center" >
+    <img src="images/ImportFromAlbumButton.png" width="90%">
+</div>
+<br>
+<div style="margin-left:10%">
+    <img src="images/Circle.png" width="7%" style="vertical-align:bottom;">
+    <span class="img-text" >  Import from album</span>
+</div>
+<br>
+<div style="text-align:center" >
+    <img src="images/ImportFromAlbumButton.png" width="90%">
+</div>
+<form enctype="multipart/form-data">
+    <label for="chooseFile"> Select image: </label>
+    <input type="file" id="chooseFile" name="chooseFile" accept="image/*">
+    <input type="submit" value="submit">
+
+</form>
+<img id="prev" src="#" alt="Uploaded Image Preview" style="display: none; max-width: 300px;">
+<script>
+    const imgInput = document.getElementById("chooseFile");
+    const imgPreview = document.getElementById("prev");
+
+    imgInput.addEventListener("change", function() {
+        const file = imgInput.files[0];
+        if (file) {
+            imgPreview.style.display = "block";
+            imgPreview.src = URL.createObjectURL(file);
+        }
+    });
+</script>
+
 <a href="/camera" target="_blank">
-    <img src="images/camera.png"
-         style="position:fixed; bottom: 10px; width:18%; left:0.1%;"  alt="카메라 아이콘">
+    <img src="images/CameraButton.png"
+         style="position:fixed; bottom: 15px; width:16%; left:2%;"  alt="카메라 아이콘">
 </a>
 <a href="/trans" target="_blank">
-    <img src="images/translating.png"
-         style="position:fixed; bottom: 10px; width:18%; left:21%;"  alt="번역 아이콘">
+    <img src="images/NotSelectedTranslationButton.png"
+         style="position:fixed; bottom: 15px; width:16%; left:21.5%;"  alt="번역 아이콘">
 </a>
 <a href="index.html" target="_blank">
-    <img src="images/home.png"
-         style="position:fixed; bottom: 10px; width:18%; left:41%;"  alt="홈 아이콘">
+    <img src="images/NotSelectedHomeButton.png"
+         style="position:fixed; bottom: 15px; width:19%; left:40.5%;"  alt="홈 아이콘">
 </a>
 <a href="/quiz" target="_blank">
-    <img src="images/quiz.png"
-         style="position:fixed; bottom: 10px; width:18%; left: 62%;" alt="퀴즈 아이콘">
+    <img src="images/NotSelectedQuizButton.png"
+         style="position:fixed; bottom: 15px; width:14.5%; left:65%;" alt="퀴즈 아이콘">
 </a>
 <a href="/dict" target="_blank">
-    <img src="images/dict2.png"
-         style="position:fixed; bottom: 10px; width:17%; left:82%;" alt="사전 아이콘">
+    <img src="images/NotSelectedWordBookButton.png"
+         style="position:fixed; bottom: 15px; width:12%; left:85.5%;" alt="단어장 아이콘">
 </a>
 </body>
 </html>

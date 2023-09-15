@@ -19,6 +19,11 @@ public class tempController {
         return "camera";
     }
 
+    @GetMapping("action")
+    public String action() {
+        return "action";
+    }
+
     @GetMapping("trans")
     public String trans() {
         return "trans";
